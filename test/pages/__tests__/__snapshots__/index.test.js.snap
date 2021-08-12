@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test for app should correct render 1`] = `
+"<section>
+  <h2>this is a demo</h2> <span></span>
+  <h3>footer</h3>
+</section>"
+`;

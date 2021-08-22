@@ -16,6 +16,10 @@ export default {
     ]
   },
 
+  route: {
+    middleware: ['auth']
+  },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     'element-ui/lib/theme-chalk/index.css'
@@ -39,7 +43,8 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -48,7 +53,8 @@ export default {
   },
 
   proxy: {
-    '/menu/': { target: 'http://localhost:8000/menu', pathRewrite: {'^/menu/': ''}, changeOrigin: true }
+    '/api/v1': { target: 'http://127.0.0.1:8080/api/v1', pathRewrite: {'^/api/v1': ''}, changeOrigin: true },
+    '/nav/menu': { target: 'http://127.0.0.1:8080/nav/menu', pathRewrite: {'^/nav/menu': ''}, changeOrigin: true }
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
